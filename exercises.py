@@ -58,3 +58,39 @@ else:
     print(f"{user_input} is not palindrome")
 
 
+#Check whether a number is even / odd
+num = int(input("Enter a number: "))
+if num % 2 == 0:
+    print(f"{num} is even")
+else:
+    print(f"{num} is odd")
+
+
+# Check Even / Odd for list of numbers
+numbers = [21,18,32,45,78,25] #list of numbers
+for num in  numbers: #iterate through the list
+    if num % 2 == 0:
+        print(f"Even :{num}")
+    else:
+        print(f"Odd: {num}")
+
+
+#User Input for multiple numbers to check even and odd
+user_input = input("Enter numbers separated by spaces: ")
+input_list = user_input.split() # separate by space
+number = [int(num) for num in input_list]
+for num in number:
+    if num % 2 ==0:
+        print(f"{num} is even")
+    else:
+        print(f"{num} is odd")
+
+
+
+# Max split example
+text = "1, 2, 3, 4, 5, 6, 7, 8, 9"
+a = text.split(', ', 4)
+print(a)
+
+
+
