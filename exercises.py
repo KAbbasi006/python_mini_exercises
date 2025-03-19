@@ -330,3 +330,116 @@ def factorial(n):
 print(factorial(3))
 
 # Function to check prime 
+def check_prime(num):
+    if num<2:
+        return False
+    for i in range(2, int(num**0.5)+1):
+        if num%i ==0:
+            return False
+    return True
+print(check_prime(6))
+
+
+# Write a function to find GCD 
+def gcd(a,b):
+    while b:
+        a,b = b, a%b 
+    return a
+print(gcd(56,98))
+
+
+#Write a funnction that takes a list of numbers and returns the sum of all even numbers
+def add_even(numbers):
+    return sum(num for num in numbers if num%2==0)
+print(add_even(([2,4,8,9, 7, 9, 2])))
+
+Scandinevia = ["Denmark", "Sweden", "Norway", "Iceland", "Finland"]
+print(Scandinevia)
+
+
+num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_num =[ i for i in num if i%2 ==0 ]
+print(even_num)
+
+num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+num.reverse()
+print(num)
+
+
+
+def occ(lst, num):
+    return lst.count(num)
+print(occ([1, 2, 2, 3, "2", 5, 8, 2], 2))
+
+
+def occ(lst, num):
+    count = 0
+    for item in lst:
+        if item == num:
+            count = count+1
+    return count
+print(occ([2, 5, 6, 5, 8, 5, 8, 9, 5, 5, 2, 5], 5))
+
+
+def occ(lst,num):
+    return len(list(filter(lambda x:x == num, lst)))
+
+print(occ([1, 2, 5, 8, 5, 5], 5))
+
+def dup(lst):
+    return list(set(lst))
+print(dup([1, 2, 3, 2, 5, 2, 8, 2, 9]))
+
+ #  Write a function that finds the second largest number in a list.
+def second_largest(lst):
+    unique = list(set(lst))
+    unique.sort(reverse = True)
+    return unique[1]
+
+print(second_largest([1, 5, 8, 3, 4, 6, 7, 5, 6, 4]))
+
+
+
+students = []
+def add_students(name, marks):
+    students.append((name, marks))
+
+def show_data():
+    for student in students:
+        print(f"{student[0]} : {student[1]}")
+add_students("Komal", 90)
+add_students("Sana", 80)
+show_data()
+
+
+students = []
+def add_student(name, marks):
+    students.append((name, marks))
+
+def show_students():
+    print("\n Student Marks List")
+    for student in students:
+        print(f"{student[0]} : {student[1]}")
+while True:
+    print("\n1. Add student")
+    print("2. Show students")
+    print("3. Exit")
+
+    choice = input("Enter your choice (1/2/3): ")
+
+    if choice == "1":
+        name = input("Enter student name: ")
+        marks = int(input("Enter student marks: "))
+        add_student(name, marks)
+        print(f"{name} has been added!")
+    
+    elif choice == "2":
+        show_students()
+       
+    elif choice == "3":
+        print("----------Exiting the system------------")
+        break
+    
+    else:
+        print("Invalid choice. Please try again!")
+    
