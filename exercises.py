@@ -443,3 +443,100 @@ while True:
     else:
         print("Invalid choice. Please try again!")
     
+
+
+print("-"*50 ,"Good ", "-"*50)
+
+#  Create a dictionary for a book with keys "title", "author", and "price". Print all keys and values.
+book = {
+    "title": "Python Basics",
+    "author" : "John Doe", 
+    "price" : 500
+}
+print(book)
+
+for key in book:
+    print(key)
+
+book.update({"price": 1000})
+print(book)
+
+book["title"] = "Komal"
+print(book)
+
+
+book = {
+    "title": "Python Basics",
+    "author" : "John Doe", 
+    "price" : 500
+}
+
+def check_key(dictionary, key):
+    return key in dictionary
+
+print(check_key(book, "title"))
+print(check_key(book, "gender"))
+
+
+def check_key(dictionary, key):
+    if key in dictionary:
+        print(f"The key '{key}' is found!")
+    else:
+        print(f"The Key '{key}' is NOT found!")
+    
+check_key(book, "gender")
+check_key(book, "author")
+
+def check_value(dictionary, value):
+    if value in dictionary.values():
+        print(f"The value '{value}' is found!")
+    else:
+        print(f"The value '{value}' is NOT found!")
+check_value(book, 2015)
+
+magazine = {
+    "a": 1,
+    "b":5,
+    "price" : 8250
+}
+
+def merge_dicts(book, magazine):
+    book.update(magazine)
+    return book
+print(merge_dicts(book, magazine))
+
+marks = {
+    "Komal": 95,
+    "Sana": 90,
+    "Maham" : 65,
+    "Farah": 85
+}
+topper = max(marks, key = marks.get)
+print(topper)
+
+marks = {
+    "maham": 92,
+    "kinza": 65,
+    "komal" : 98,
+    "zoha": 85
+}
+topper = None
+highest_marks = -1
+for  student, score in marks.items():
+    if score > highest_marks:
+        highest_marks = score
+        topper = student
+print(f"Topper: {topper} , Marks: {highest_marks}")
+
+
+marks = {
+    "maham": 92,
+    "kinza": 65,
+    "komal" : 98,
+    "zoha": 85
+}
+sorted_marks = sorted(marks.items(), key=lambda item:item[1], reverse = True)
+top_3 = sorted_marks[:3]
+
+for student, score in top_3:
+    print(f"{student}: {score}")
